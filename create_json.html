@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="./script.js"></script>
+    <style>
+        .card{
+            display: inline-block;
+            margin: 10px;
+            background-color: bisque;
+            padding: 10px;
+            font-weight: bold;
+        }
+        .name{
+            color: blue;
+            font-size: 25px;
+        }
+        .capital{
+            color: red;
+        }
+        .pop{
+            color:blueviolet
+        }
+
+    </style>
+</head>
+<body>
+        <div>
+        <input type="text" placeholder="country name" id="name">
+        <input type="text" placeholder="capital name" id="cap">
+        <input type="text" placeholder="population" id="pop">
+        <button onclick="addData()">add data</button>
+        </div>
+        <div id="demo">
+            
+        </div>
+
+
+
+    <script>
+        demobj=document.getElementById("demo")
+        data=[
+            {name:"india",capital:"Delhi",pop:"8 mil"},
+            {name:"England",capital:"London",pop:"10 mil"},
+            {name:"France",capital:"Paris",pop:"12 mil"}]
+        
+
+        function renderData(){
+            demobj.innerHTML=''
+            for(i=0;i<data.length;i++){
+            demobj.innerHTML+=`
+            <div class='card'>
+            <div class='name'>${data[i].name}</div>
+            <div class='capital'>${data[i].capital}</div>
+            <div class='pop'>${data[i].pop}</div>
+            </div>`
+           }
+        }
+
+
+        addData()
+        function addData(){
+            nameobj=document.getElementById("name")
+            capobj=document.getElementById("cap")
+            popobj=document.getElementById("pop")
+            tempdata={name:nameobj.value,capital:capobj.value,pop:popobj.value}
+            data.push(tempdata)   
+            renderData()
+        }
+    </script>
+</body>
+</html>

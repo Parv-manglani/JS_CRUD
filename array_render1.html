@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <div id="container">
+
+    </div>
+    
+    <script>
+     
+    student=[
+        {name:"parv",age:20,color:"red"},
+        {name:"harsh",age:19,color:"blue"},
+        {name:"harish",age:20,color:"green"},
+        {name:"aman",age:17,color:"orange"}
+    ]
+    conobj=document.getElementById("container")
+     for(i=0;i<student.length;i++){
+        if(student[i].age >= 18){
+            op="ELIGIBLE TO VOTE"
+        }
+    else{
+           op="NOT ELIGIBLE TO VOTE"
+    }
+     conobj.innerHTML+=`
+     <div style="background-color:${student[i].color}">
+                    <h1>${student[i].name}</h1>
+                    <h2>${student[i].age}</h2>
+                    <button>${op}</button>
+     </div>
+     `
+  }
+    </script>
+
+</body>
+</html>
