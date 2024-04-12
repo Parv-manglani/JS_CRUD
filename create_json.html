@@ -41,7 +41,9 @@
         data=[
             {name:"india",capital:"Delhi",pop:"8 mil"},
             {name:"England",capital:"London",pop:"10 mil"},
-            {name:"France",capital:"Paris",pop:"12 mil"}]
+            {name:"France",capital:"Paris",pop:"12 mil"},
+            {name:"russia",capital:"japan",pop:"13 mil"}
+        ]
         
 
         function renderData(){
@@ -52,9 +54,13 @@
             <div class='name'>${data[i].name}</div>
             <div class='capital'>${data[i].capital}</div>
             <div class='pop'>${data[i].pop}</div>
+            <button onclick="editData()">edit</button>
+            <button onclick="deleteData(${i})">delete</button>
             </div>`
            }
         }
+         
+  
 
 
         addData()
@@ -66,6 +72,17 @@
             data.push(tempdata)   
             renderData()
         }
+
+        function deleteData(k){
+          data.splice(k,1)
+          renderData()
+        }
+
+        function editData(data){
+            prompt(data)
+        }
+
+      
     </script>
 </body>
 </html>
